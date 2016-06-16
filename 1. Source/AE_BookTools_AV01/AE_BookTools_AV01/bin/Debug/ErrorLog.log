@@ -1,0 +1,27 @@
+[03-30-2016 11:59:45][        ReprNotesInitializationFromQuote] Argument 'Prompt' cannot be converted to type 'String'.
+[03-30-2016 11:59:45][                        BP_SBO_ItemEvent] Argument 'Prompt' cannot be converted to type 'String'.
+[03-30-2016 11:59:45][             SBO_Application_ItemEvent()] Argument 'Prompt' cannot be converted to type 'String'.
+[03-30-2016 11:59:54][        ReprNotesInitializationFromQuote] Argument 'Prompt' cannot be converted to type 'String'.
+[03-30-2016 11:59:54][                        BP_SBO_ItemEvent] Argument 'Prompt' cannot be converted to type 'String'.
+[03-30-2016 11:59:54][             SBO_Application_ItemEvent()] Argument 'Prompt' cannot be converted to type 'String'.
+[03-30-2016 12:28:33][        ReprNotesInitializationFromQuote] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Could not find stored procedure 'AE_LOADREPAIRNOTES'.
+
+[03-30-2016 12:28:33][                        BP_SBO_ItemEvent] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Could not find stored procedure 'AE_LOADREPAIRNOTES'.
+
+[03-30-2016 12:28:33][             SBO_Application_ItemEvent()] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Could not find stored procedure 'AE_LOADREPAIRNOTES'.
+
+[04-11-2016 09:04:19][                        BP_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 09:04:19][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 09:05:30][               RepairNotes_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 09:05:30][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 09:05:34][               RepairNotes_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 09:05:34][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 09:18:28][                        BP_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 09:18:28][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 10:33:52][                                  Main()] Connection - Could not find SBO that match the connection string
+[04-11-2016 10:36:52][               RepairNotes_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 10:36:52][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 10:39:06][                        BP_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 10:39:06][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
+[04-11-2016 13:03:15][                        BP_SBO_ItemEvent] Row - Invalid index  [66000-31]
+[04-11-2016 13:03:15][             SBO_Application_ItemEvent()] Row - Invalid index  [66000-31]
