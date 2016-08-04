@@ -31,6 +31,7 @@
             GenerateDocNum(objForm)
 
             LoadDefValues(objForm, sCardCode, sItemCode, sQuoteDocNo, sQuoteSeries, sLine, sDocType, sFormMode)
+            LoadMatrix(objForm, "", sFormMode)
 
             oMatrix = objForm.Items.Item("17").Specific
             ' oMatrix.AddRow(1)
@@ -47,7 +48,7 @@
     End Sub
 #End Region
 #Region "Open Form in Find Mode"
-    Public Sub ToolCate_OpenFormFindMode(ByVal sDocNum As String)
+    Public Sub ToolCate_OpenFormFindMode(ByVal sDocNum As String, ByVal sFormMode As String)
         Dim sFuncName As String = "OpenFormFindMode"
         Dim sErrDesc As String = String.Empty
         Try
@@ -79,7 +80,10 @@
             objForm.Items.Item("18").Click(SAPbouiCOM.BoCellClickType.ct_Regular)
 
             objForm.Items.Item("1").Click(SAPbouiCOM.BoCellClickType.ct_Regular)
+            LoadMatrix(objForm, sDocNum, sFormMode)
+
             objForm.PaneLevel = 2
+
             objForm.Freeze(False)
             objForm.Update()
         Catch ex As Exception
@@ -126,8 +130,13 @@
         oEdit = objForm.Items.Item("10").Specific
         oEdit.Value = sDocType
         objForm.Items.Item("18").Click(SAPbouiCOM.BoCellClickType.ct_Regular)
+        
+        objForm.Freeze(False)
+    End Sub
+#End Region
+#Region "Load Matrix values"
+    Private Sub LoadMatrix(ByVal objForm As SAPbouiCOM.Form, ByVal sDocNum As String, ByVal sFormMode As String)
         objForm.PaneLevel = 2
-
         oMatrix = objForm.Items.Item("17").Specific
         If sFormMode = "3" Then
             sSQL = "SELECT ItmsTypCod,ItmsGrpNam FROM OITG ORDER BY ItmsTypCod ASC"
@@ -144,11 +153,43 @@
             End If
             System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet)
         Else
+            'objForm.Items.Item("17").Enabled = False
+            'oMatrix.Clear()
+            'sSQL = "DECLARE @TOOLCATDOCNO NVARCHAR(MAX) "
+            'sSQL = sSQL & " SET @TOOLCATDOCNO = '" & sDocNum & "' "
+            'sSQL = sSQL & " IF ISNULL(@TOOLCATDOCNO,'') = '' "
+            'sSQL = sSQL & " BEGIN "
+            'sSQL = sSQL & " SELECT ItmsTypCod,ItmsGrpNam FROM OITG ORDER BY ItmsTypCod ASC "
+            'sSQL = sSQL & " END "
+            'sSQL = sSQL & " ELSE "
+            'sSQL = sSQL & " BEGIN "
+            'sSQL = sSQL & " SELECT ISNULL((SELECT 'Y' FROM [@AE_TCSS] A INNER JOIN [@AE_TCS1] B ON B.DocEntry = A.DocEntry WHERE A.U_DOCNUM = @TOOLCATDOCNO AND B.U_ITEMPROPERTYCODE = ItmsTypCod),'') [Select], "
+            'sSQL = sSQL & " ItmsTypCod,ItmsGrpNam FROM OITG ORDER BY ItmsTypCod ASC "
+            'sSQL = sSQL & " END "
+            'oRecordSet = p_oDICompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
+            'oRecordSet.DoQuery(sSQL)
+            'If Not (oRecordSet.BoF And oRecordSet.EoF) Then
+            '    oRecordSet.MoveFirst()
+            '    Do Until oRecordSet.EoF
+            '        oMatrix.AddRow(1)
+            '        oMatrix.Columns.Item("V_-1").Cells.Item(oMatrix.RowCount).Specific.value = oMatrix.RowCount
+            '        oCheck = oMatrix.Columns.Item("V_2").Cells.Item(oMatrix.RowCount).Specific
+            '        If oRecordSet.Fields.Item("Select").Value = "Y" Then
+            '            oCheck.Checked = True
+            '        Else
+            '            oCheck.Checked = False
+            '        End If
+            '        oMatrix.Columns.Item("V_1").Cells.Item(oMatrix.RowCount).Specific.value = oRecordSet.Fields.Item("ItmsTypCod").Value
+            '        oMatrix.Columns.Item("V_0").Cells.Item(oMatrix.RowCount).Specific.value = oRecordSet.Fields.Item("ItmsGrpNam").Value
+            '        oRecordSet.MoveNext()
+            '    Loop
+            'End If
+            'System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet)
 
+            'objForm.Update()
+            'objForm.Items.Item("17").Enabled = True
         End If
-        
 
-        objForm.Freeze(False)
     End Sub
 #End Region
 #Region "Check all Fields"
@@ -159,6 +200,10 @@
         sErrDesc = ""
 
         oMatrix = objForm.Items.Item("17").Specific
+        For i = 1 To oMatrix.RowCount
+            oMatrix.Columns.Item("V_-1").Cells.Item(i).Specific.value = i
+        Next
+
         For i = 1 To oMatrix.RowCount
             oCheck = oMatrix.Columns.Item("V_2").Cells.Item(i).Specific
             If oCheck.Checked = True Then

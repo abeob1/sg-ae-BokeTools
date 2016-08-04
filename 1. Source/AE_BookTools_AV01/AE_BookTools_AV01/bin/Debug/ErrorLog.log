@@ -1,27 +1,54 @@
-[03-30-2016 11:59:45][        ReprNotesInitializationFromQuote] Argument 'Prompt' cannot be converted to type 'String'.
-[03-30-2016 11:59:45][                        BP_SBO_ItemEvent] Argument 'Prompt' cannot be converted to type 'String'.
-[03-30-2016 11:59:45][             SBO_Application_ItemEvent()] Argument 'Prompt' cannot be converted to type 'String'.
-[03-30-2016 11:59:54][        ReprNotesInitializationFromQuote] Argument 'Prompt' cannot be converted to type 'String'.
-[03-30-2016 11:59:54][                        BP_SBO_ItemEvent] Argument 'Prompt' cannot be converted to type 'String'.
-[03-30-2016 11:59:54][             SBO_Application_ItemEvent()] Argument 'Prompt' cannot be converted to type 'String'.
-[03-30-2016 12:28:33][        ReprNotesInitializationFromQuote] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Could not find stored procedure 'AE_LOADREPAIRNOTES'.
+[08-02-2016 12:28:47][        ReprNotesInitializationFromQuote] Invalid query tree  [300-33]. The SQL error is 8144
+[08-02-2016 12:28:47][                        BP_SBO_ItemEvent] Invalid query tree  [300-33]. The SQL error is 8144
+[08-02-2016 12:28:47][             SBO_Application_ItemEvent()] Invalid query tree  [300-33]. The SQL error is 8144
+[08-02-2016 12:29:46][        ReprNotesInitializationFromQuote] Argument 'Prompt' cannot be converted to type 'String'.
+[08-02-2016 12:29:46][                        BP_SBO_ItemEvent] Argument 'Prompt' cannot be converted to type 'String'.
+[08-02-2016 12:29:46][             SBO_Application_ItemEvent()] Argument 'Prompt' cannot be converted to type 'String'.
+[08-02-2016 12:40:06][                        OpenFormFindMode] Argument 'Prompt' cannot be converted to type 'String'.
+[08-02-2016 12:40:06][                        BP_SBO_ItemEvent] Argument 'Prompt' cannot be converted to type 'String'.
+[08-02-2016 12:40:06][             SBO_Application_ItemEvent()] Argument 'Prompt' cannot be converted to type 'String'.
+[08-02-2016 13:01:35][        ReprNotesInitializationFromQuote] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
 
-[03-30-2016 12:28:33][                        BP_SBO_ItemEvent] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Could not find stored procedure 'AE_LOADREPAIRNOTES'.
+[08-02-2016 13:01:35][                        BP_SBO_ItemEvent] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
 
-[03-30-2016 12:28:33][             SBO_Application_ItemEvent()] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Could not find stored procedure 'AE_LOADREPAIRNOTES'.
+[08-02-2016 13:01:35][             SBO_Application_ItemEvent()] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
 
-[04-11-2016 09:04:19][                        BP_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 09:04:19][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 09:05:30][               RepairNotes_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 09:05:30][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 09:05:34][               RepairNotes_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 09:05:34][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 09:18:28][                        BP_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 09:18:28][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 10:33:52][                                  Main()] Connection - Could not find SBO that match the connection string
-[04-11-2016 10:36:52][               RepairNotes_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 10:36:52][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 10:39:06][                        BP_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 10:39:06][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
-[04-11-2016 13:03:15][                        BP_SBO_ItemEvent] Row - Invalid index  [66000-31]
-[04-11-2016 13:03:15][             SBO_Application_ItemEvent()] Row - Invalid index  [66000-31]
+[08-02-2016 14:22:02][              ReprNotes_OpenFormFindMode] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
+
+[08-02-2016 14:22:02][                        BP_SBO_ItemEvent] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
+
+[08-02-2016 14:22:02][             SBO_Application_ItemEvent()] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
+
+[08-02-2016 14:22:37][              ReprNotes_OpenFormFindMode] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
+
+[08-02-2016 14:22:37][                        BP_SBO_ItemEvent] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
+
+[08-02-2016 14:22:37][             SBO_Application_ItemEvent()] 1). [Microsoft][SQL Server Native Client 11.0][SQL Server]Procedure or function 'AE_LOADREPAIRNOTES' expects parameter '@REPAIRNOTEDOCNUM', which was not supplied.
+
+[08-02-2016 14:30:55][              ReprNotes_OpenFormFindMode] Data Table - invalid Unique Id  [66000-138]
+[08-02-2016 14:30:55][                        BP_SBO_ItemEvent] Data Table - invalid Unique Id  [66000-138]
+[08-02-2016 14:30:55][             SBO_Application_ItemEvent()] Data Table - invalid Unique Id  [66000-138]
+[08-02-2016 14:32:01][              ReprNotes_OpenFormFindMode] Matrix - invalid column number
+[08-02-2016 14:32:01][                        BP_SBO_ItemEvent] Matrix - invalid column number
+[08-02-2016 14:32:01][             SBO_Application_ItemEvent()] Matrix - invalid column number
+[08-02-2016 15:05:14][                                  Main()] Connection - Could not find SBO that match the connection string
+[08-02-2016 15:17:56][               RepairNotes_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
+[08-02-2016 15:17:56][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
+[08-02-2016 15:18:26][               RepairNotes_SBO_ItemEvent] Conversion from string "" to type 'Integer' is not valid.
+[08-02-2016 15:18:26][             SBO_Application_ItemEvent()] Conversion from string "" to type 'Integer' is not valid.
+[08-02-2016 15:33:32][               RepairNotes_SBO_ItemEvent] Matrix - invalid column number
+[08-02-2016 15:33:32][             SBO_Application_ItemEvent()] Matrix - invalid column number
+[08-02-2016 15:34:43][               RepairNotes_SBO_ItemEvent] Matrix - invalid column number
+[08-02-2016 15:34:43][             SBO_Application_ItemEvent()] Matrix - invalid column number
+[08-03-2016 16:08:27][                        OpenFormFindMode] Invalid field name
+[08-03-2016 16:08:27][                        BP_SBO_ItemEvent] Invalid field name
+[08-03-2016 16:08:27][             SBO_Application_ItemEvent()] Invalid field name
+[08-03-2016 16:09:40][                        OpenFormFindMode] Invalid field name
+[08-03-2016 16:09:40][                        BP_SBO_ItemEvent] Invalid field name
+[08-03-2016 16:09:40][             SBO_Application_ItemEvent()] Invalid field name
+[08-04-2016 10:13:53][              ReprNotes_OpenFormFindMode] Form - Invalid Form
+[08-04-2016 10:13:53][                        BP_SBO_ItemEvent] Form - Invalid Form
+[08-04-2016 10:13:53][             SBO_Application_ItemEvent()] Form - Invalid Form
+[08-04-2016 10:14:33][              ReprNotes_OpenFormFindMode] Form - Invalid Form
+[08-04-2016 10:14:33][                        BP_SBO_ItemEvent] Form - Invalid Form
+[08-04-2016 10:14:33][             SBO_Application_ItemEvent()] Form - Invalid Form

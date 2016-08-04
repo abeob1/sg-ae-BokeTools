@@ -33,7 +33,7 @@
         System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet)
 
         If iCount > 0 Then
-            ToolCate_OpenFormFindMode(sToolCatNo)
+            ToolCate_OpenFormFindMode(sToolCatNo, objForm.Mode)
         Else
             ToolCatFormInitializationFromQuote(sCardCode, sItemCode, sQuoteDocNo, sQuoteSeries, iLine, "23", objForm.Mode)
         End If
@@ -66,7 +66,7 @@
         System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet)
 
         If iCount > 0 Then
-            ReprNotes_OpenFormFindMode(sReprNtsDocNo)
+            ReprNotes_OpenFormFindMode(sReprNtsDocNo, sToolCatNo, iLine, "OQUT")
         Else
             ReprNotesInitializationFromQuote(sCardCode, sItemCode, sQuoteDocNo, sQuoteSeries, iLine, "23", sToolCatNo, objForm.Mode)
         End If
@@ -144,7 +144,7 @@
                         objForm = p_oSBOApplication.Forms.GetForm(pval.FormTypeEx, pval.FormTypeCount)
                         If pval.ItemUID = "1" Then
                             If pval.Action_Success = True Then
-                                DelUncheckValues(objForm)
+                                'DelUncheckValues(objForm)
                             End If
                         End If
 

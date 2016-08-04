@@ -40,7 +40,7 @@
         
 
         If iCount > 0 Then
-            ToolCate_OpenFormFindMode(sToolCatNo)
+            ToolCate_OpenFormFindMode(sToolCatNo, objForm.Mode)
         Else
             ToolCatFormInitializationFromQuote(sCardCode, sItemCode, sQuoteDocNo, sQuoteSeries, iLine, "13", objForm.Mode)
         End If
@@ -80,7 +80,7 @@
         
 
         If iCount > 0 Then
-            ReprNotes_OpenFormFindMode(sReprNtsDocNo)
+            ReprNotes_OpenFormFindMode(sReprNtsDocNo, sToolCatNo, iLine, "OINV")
         Else
             ReprNotesInitializationFromQuote(sCardCode, sItemCode, sQuoteDocNo, sQuoteSeries, iLine, "13", sToolCatNo, objForm.Mode)
         End If
@@ -138,15 +138,6 @@
         Try
             If pval.Before_Action = True Then
                 Select Case pval.EventType
-                    Case SAPbouiCOM.BoEventTypes.et_FORM_LOAD
-                        objForm = p_oSBOApplication.Forms.GetForm(pval.FormTypeEx, pval.FormTypeCount)
-
-                    Case SAPbouiCOM.BoEventTypes.et_KEY_DOWN
-                        objForm = p_oSBOApplication.Forms.GetForm(pval.FormTypeEx, pval.FormTypeCount)
-                        If pval.CharPressed = "9" Then
-
-                        End If
-
                     Case SAPbouiCOM.BoEventTypes.et_ITEM_PRESSED
                         objForm = p_oSBOApplication.Forms.GetForm(pval.FormTypeEx, pval.FormTypeCount)
                         If pval.ItemUID = "1" Then
@@ -167,7 +158,7 @@
                         objForm = p_oSBOApplication.Forms.GetForm(pval.FormTypeEx, pval.FormTypeCount)
                         If pval.ItemUID = "1" Then
                             If pval.Action_Success = True Then
-                                DelUncheckValues(objForm)
+                                'DelUncheckValues(objForm)
                             End If
                         End If
 

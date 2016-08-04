@@ -5,3 +5,8 @@ D:\Jeeva\Abeo Projects\1 Projects\Boke Tools\Source\AE_BookTools_AV01\AE_BookToo
 D:\Jeeva\Abeo Projects\1 Projects\Boke Tools\Source\AE_BookTools_AV01\AE_BookTools_AV01\bin\Debug\AE_BookTools_AV01.pdb
 D:\Jeeva\Abeo Projects\1 Projects\Boke Tools\Source\AE_BookTools_AV01\AE_BookTools_AV01\obj\x86\Debug\AE_BookTools_AV01.exe
 D:\Jeeva\Abeo Projects\1 Projects\Boke Tools\Source\AE_BookTools_AV01\AE_BookTools_AV01\obj\x86\Debug\AE_BookTools_AV01.pdb
+D:\J\Boke Tools\Add on Source\AE_BookTools_AV01\AE_BookTools_AV01\obj\x86\Debug\Interop.SAPbobsCOM.dll
+D:\J\Boke Tools\Add on Source\AE_BookTools_AV01\AE_BookTools_AV01\obj\x86\Debug\Interop.SAPbouiCOM.dll
+D:\J\Boke Tools\Add on Source\AE_BookTools_AV01\AE_BookTools_AV01\obj\x86\Debug\AE_BookTools_AV01.vbproj.ResolveComReference.cache
+D:\J\Boke Tools\Add on Source\AE_BookTools_AV01\AE_BookTools_AV01\obj\x86\Debug\AE_BookTools_AV01.exe
+D:\J\Boke Tools\Add on Source\AE_BookTools_AV01\AE_BookTools_AV01\obj\x86\Debug\AE_BookTools_AV01.pdb
