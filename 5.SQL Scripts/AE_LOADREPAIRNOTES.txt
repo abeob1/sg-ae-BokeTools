@@ -1,0 +1,74 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[AE_LOADREPAIRNOTES]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].AE_LOADREPAIRNOTES
+GO
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE PROCEDURE [dbo].[AE_LOADREPAIRNOTES](@TOOLSCATDOCNUM NVARCHAR(10),@REPAIRNOTEDOCNUM NVARCHAR(10))
+AS
+BEGIN
+
+--DECLARE @TOOLSCATDOCNUM NVARCHAR(10),@REPAIRNOTEDOCNUM NVARCHAR(10)
+--SET @TOOLSCATDOCNUM = 5
+--SET @REPAIRNOTEDOCNUM = '5'
+
+DECLARE @NUM NVARCHAR(10),@QRY NVARCHAR(MAX),@QUERY NVARCHAR(MAX),@ITEMPROPERTYCODE NVARCHAR(10)
+
+DECLARE C1 CURSOR FOR
+SELECT B.U_ITEMPROPERTYCODE
+FROM [@AE_TCSS] A INNER JOIN [@AE_TCS1] B ON B.DocEntry = A.DocEntry
+WHERE B.U_SELECT = 'Y' AND A.U_DOCNUM = @TOOLSCATDOCNUM
+
+OPEN C1;
+FETCH NEXT FROM C1 INTO @NUM
+WHILE @@FETCH_STATUS = 0
+BEGIN
+
+SET @QRY = 'QryGroup' + @NUM + ''
+
+IF ISNULL(@QUERY,'') = ''
+BEGIN
+--SET @QUERY = 'SELECT DISTINCT '''' [Select], ItemName,FrgnName [ForeignName] FROM OITM WHERE ' + @QRY + ' = ''Y'''
+
+SET @QUERY = 'SELECT DISTINCT ISNULL((SELECT ''Y'' FROM [@AE_EPR1] B INNER JOIN [@AE_REPR] A ON A.DocEntry = B.DocEntry
+									  WHERE ISNULL(B.U_ITEMDESC,'''') = ISNULL(ItemName,'''') 
+									  AND ISNULL(B.U_FRGNNAME,'''') = ISNULL(FrgnName,'''') 
+									  AND A.U_DOCNUM = ''' + @REPAIRNOTEDOCNUM + '''),'''') [Select], 
+			 ItemName,FrgnName [ForeignName] FROM OITM WHERE ' + @QRY + ' = ''Y''
+			 '
+
+
+END
+ELSE
+BEGIN
+--SET @QUERY = @QUERY + ' UNION ALL ' + 'SELECT DISTINCT '''' [Select], ItemName,FrgnName [ForeignName] FROM OITM WHERE ' + @QRY + ' = ''Y'''
+
+SET @QUERY = @QUERY + ' UNION ALL ' + 'SELECT DISTINCT ISNULL((SELECT ''Y'' FROM [@AE_EPR1] B INNER JOIN [@AE_REPR] A ON A.DocEntry = B.DocEntry
+															   WHERE ISNULL(B.U_ITEMDESC,'''') = ISNULL(ItemName,'''') 
+															   AND ISNULL(B.U_FRGNNAME,'''') = ISNULL(FrgnName,'''') 
+															   AND A.U_DOCNUM = ''' + @REPAIRNOTEDOCNUM + '''),'''') [Select], 
+			 ItemName,FrgnName [ForeignName] FROM OITM WHERE ' + @QRY + ' = ''Y''
+			 '
+
+
+END
+
+FETCH NEXT FROM C1 INTO @NUM
+END
+CLOSE C1;
+DEALLOCATE C1;
+
+SET @QUERY = @QUERY + ' ORDER BY 2'
+
+EXEC('' + @QUERY + '')
+
+END
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+---------------------------------------------------------------------------------------------------------------------------

@@ -157,9 +157,14 @@
                                     If pval.ColUID = "U_TOOLSCATEGORY" Then
                                         OpenToolsCategory(objForm, pval.Row)
                                     ElseIf pval.ColUID = "U_REPAIRNOTES" Then
-                                        OpenRepairNotes(objForm, pval.Row)
+                                        If oMatrix.Columns.Item("U_TOOLSCATEGORY").Cells.Item(pval.Row).Specific.value <> "" Then
+                                            OpenRepairNotes(objForm, pval.Row)
+                                        Else
+                                            p_oSBOApplication.StatusBar.SetText("Select Tools category first", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Warning)
+                                        End If
                                     End If
                                 End If
+
                             End If
                         End If
 
@@ -179,13 +184,13 @@
             If pVal.BeforeAction = False Then
                 Dim objForm As SAPbouiCOM.Form
                 If pVal.MenuUID = "AE_VM" Then
-                   
+
                 ElseIf pVal.MenuUID = "1282" Then
                     objForm = p_oSBOApplication.Forms.Item(p_oSBOApplication.Forms.ActiveForm.UniqueID)
-                    
+
                 ElseIf pVal.MenuUID = "1288" Or pVal.MenuUID = "1289" Or pVal.MenuUID = "1290" Or pVal.MenuUID = "1291" Then
                     objForm = p_oSBOApplication.Forms.Item(p_oSBOApplication.Forms.ActiveForm.UniqueID)
-                    
+
                 End If
             End If
         Catch ex As Exception
@@ -193,5 +198,5 @@
         End Try
     End Sub
 #End Region
-    
+
 End Module

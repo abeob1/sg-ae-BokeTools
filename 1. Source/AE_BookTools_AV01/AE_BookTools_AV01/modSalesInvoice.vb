@@ -171,7 +171,11 @@
                                     If pval.ColUID = "U_TOOLSCATEGORY" Then
                                         OpenToolsCategory(objForm, pval.Row)
                                     ElseIf pval.ColUID = "U_REPAIRNOTES" Then
-                                        OpenRepairNotes(objForm, pval.Row)
+                                        If oMatrix.Columns.Item("U_TOOLSCATEGORY").Cells.Item(pval.Row).Specific.value <> "" Then
+                                            OpenRepairNotes(objForm, pval.Row)
+                                        Else
+                                            p_oSBOApplication.StatusBar.SetText("Select Tools category first", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Warning)
+                                        End If
                                     End If
                                 End If
                             End If

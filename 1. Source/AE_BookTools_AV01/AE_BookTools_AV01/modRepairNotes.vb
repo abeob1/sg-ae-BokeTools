@@ -9,6 +9,7 @@
     Private oRecordSet As SAPbobsCOM.Recordset
     Private iParentLine As Integer
     Private sParentForm As String
+    Private sItemString As String
 
 #Region "Form Initialization from quote"
     Public Sub ReprNotesInitializationFromQuote(ByVal sCardCode As String, ByVal sItemCode As String, ByVal sQuoteDocNo As String, ByVal sQuoteSeries As String, ByVal sLine As String, ByVal sDocType As String, ByVal sToolCatNo As String, ByVal sFormMode As String)
@@ -100,6 +101,20 @@
 
             objForm.PaneLevel = "3"
             LoadGrid(objForm, sDocNum, sToolCatDocNo)
+            GetItemString(objForm)
+
+            If objForm.Mode = SAPbouiCOM.BoFormMode.fm_OK_MODE Then
+
+                If sParentForm = "OQUT" Then
+                    oForm = p_oSBOApplication.Forms.GetForm("149", 1)
+                    oMatrix = oForm.Items.Item("38").Specific
+                    oMatrix.Columns.Item("U_AB_RNote").Cells.Item(iParentLine).Specific.value = sItemString
+                ElseIf sParentForm = "OINV" Then
+                    oForm = p_oSBOApplication.Forms.GetForm("133", 1)
+                    oMatrix = oForm.Items.Item("38").Specific
+                    oMatrix.Columns.Item("U_AB_RNote").Cells.Item(iParentLine).Specific.value = sItemString
+                End If
+            End If
 
             'objForm.PaneLevel = 2
             'AddItemCFLCondition(objForm)
@@ -292,6 +307,8 @@
 #Region "Move Item to Matrix"
     Private Sub MoveItemsToMatrix(ByVal objForm As SAPbouiCOM.Form)
         Dim iLine, i As Integer
+        sItemString = String.Empty
+
         objForm.PaneLevel = "2"
         oGrid = objForm.Items.Item("23").Specific
         oMatrix = objForm.Items.Item("17").Specific
@@ -301,10 +318,34 @@
         For i = 0 To oGrid.DataTable.Rows.Count - 1
             If oGrid.DataTable.GetValue("Select", i) = "Y" Then
                 oMatrix.AddRow(1)
+                If sItemString = "" Then
+                    sItemString = oGrid.DataTable.GetValue("ItemName", i)
+                Else
+                    sItemString = sItemString & "," & oGrid.DataTable.GetValue("ItemName", i)
+                End If
                 oMatrix.Columns.Item("V_-1").Cells.Item(iLine).Specific.value = iLine
                 oMatrix.Columns.Item("V_1").Cells.Item(iLine).Specific.value = oGrid.DataTable.GetValue("ItemName", i)
                 oMatrix.Columns.Item("V_0").Cells.Item(iLine).Specific.value = oGrid.DataTable.GetValue("ForeignName", i)
                 iLine = iLine + 1
+            End If
+        Next
+
+    End Sub
+#End Region
+#Region "Get Item String"
+    Private Sub GetItemString(ByVal objForm As SAPbouiCOM.Form)
+        sItemString = String.Empty
+
+        objForm.PaneLevel = "3"
+        oGrid = objForm.Items.Item("23").Specific
+        
+        For i As Integer = 0 To oGrid.DataTable.Rows.Count - 1
+            If oGrid.DataTable.GetValue("Select", i) = "Y" Then
+                If sItemString = "" Then
+                    sItemString = oGrid.DataTable.GetValue("ItemName", i)
+                Else
+                    sItemString = sItemString & "," & oGrid.DataTable.GetValue("ItemName", i)
+                End If
             End If
         Next
 
@@ -343,10 +384,12 @@
                                     oForm = p_oSBOApplication.Forms.GetForm("149", pval.FormTypeCount)
                                     oMatrix = oForm.Items.Item("38").Specific
                                     oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(iLine).Specific.value = sDocNum
+                                    oMatrix.Columns.Item("U_AB_RNote").Cells.Item(iLine).Specific.value = sItemString
                                 ElseIf sDocType = "13" Then
                                     oForm = p_oSBOApplication.Forms.GetForm("133", pval.FormTypeCount)
                                     oMatrix = oForm.Items.Item("38").Specific
                                     oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(iLine).Specific.value = sDocNum
+                                    oMatrix.Columns.Item("U_AB_RNote").Cells.Item(iLine).Specific.value = sItemString
                                 End If
                             ElseIf objForm.Mode = SAPbouiCOM.BoFormMode.fm_UPDATE_MODE Then
                                 If CheckAllFields(objForm, sErrDesc) = False Then
@@ -378,10 +421,12 @@
                                     oForm = p_oSBOApplication.Forms.GetForm("149", pval.FormTypeCount)
                                     oMatrix = oForm.Items.Item("38").Specific
                                     oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(iParentLine).Specific.value = sDocNum
+                                    oMatrix.Columns.Item("U_AB_RNote").Cells.Item(iLine).Specific.value = sItemString
                                 ElseIf sParentForm = "OINV" Then
                                     oForm = p_oSBOApplication.Forms.GetForm("133", pval.FormTypeCount)
                                     oMatrix = oForm.Items.Item("38").Specific
                                     oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(iParentLine).Specific.value = sDocNum
+                                    oMatrix.Columns.Item("U_AB_RNote").Cells.Item(iLine).Specific.value = sItemString
                                 End If
                             End If
                         End If
@@ -471,23 +516,17 @@
                                 sDocType = oEdit.Value
                                 oEdit = objForm.Items.Item("16").Specific
                                 sDocNum = oEdit.Value
-                                'If sDocType = "23" Then
-                                '    oForm = p_oSBOApplication.Forms.GetForm("149", pval.FormTypeCount)
-                                '    oMatrix = oForm.Items.Item("38").Specific
-                                '    oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(iLine).Specific.value = sDocNum
-                                'ElseIf sDocType = "13" Then
-                                '    oForm = p_oSBOApplication.Forms.GetForm("133", pval.FormTypeCount)
-                                '    oMatrix = oForm.Items.Item("38").Specific
-                                '    oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(iLine).Specific.value = sDocNum
-                                'End If
+                               
                                 If sParentForm = "OQUT" Then
                                     oForm = p_oSBOApplication.Forms.GetForm("149", pval.FormTypeCount)
                                     oMatrix = oForm.Items.Item("38").Specific
                                     oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(iParentLine).Specific.value = sDocNum
+                                    oMatrix.Columns.Item("U_AB_RNote").Cells.Item(iParentLine).Specific.value = sItemString
                                 ElseIf sParentForm = "OINV" Then
                                     oForm = p_oSBOApplication.Forms.GetForm("133", pval.FormTypeCount)
                                     oMatrix = oForm.Items.Item("38").Specific
                                     oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(iParentLine).Specific.value = sDocNum
+                                    oMatrix.Columns.Item("U_AB_RNote").Cells.Item(iParentLine).Specific.value = sItemString
                                 End If
                             End If
                         End If
