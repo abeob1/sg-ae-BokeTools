@@ -119,6 +119,7 @@
             addField("@AE_REPR", "TOLCATNO", "TOOLS CATEGORY DOCNO", SAPbobsCOM.BoFieldTypes.db_Alpha, 10, SAPbobsCOM.BoFldSubTypes.st_None, "", "", "")
 
             CreateUDOTable("AE_EPR1", "REPAIR NOTES LINE", SAPbobsCOM.BoUTBTableType.bott_DocumentLines)
+            addField("@AE_EPR1", "ITEMCODE", "ITEM CODE", SAPbobsCOM.BoFieldTypes.db_Alpha, 50, SAPbobsCOM.BoFldSubTypes.st_None, "", "", "")
             addField("@AE_EPR1", "ITEMDESC", "ITEM DESCRIPTION", SAPbobsCOM.BoFieldTypes.db_Alpha, 100, SAPbobsCOM.BoFldSubTypes.st_None, "", "", "")
             addField("@AE_EPR1", "FRGNNAME", "ITEM FOREIGN NAME", SAPbobsCOM.BoFieldTypes.db_Alpha, 100, SAPbobsCOM.BoFldSubTypes.st_None, "", "", "")
 

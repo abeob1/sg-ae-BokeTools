@@ -36,7 +36,7 @@ SET @QUERY = 'SELECT DISTINCT ISNULL((SELECT ''Y'' FROM [@AE_EPR1] B INNER JOIN 
 									  WHERE ISNULL(B.U_ITEMDESC,'''') = ISNULL(ItemName,'''') 
 									  AND ISNULL(B.U_FRGNNAME,'''') = ISNULL(FrgnName,'''') 
 									  AND A.U_DOCNUM = ''' + @REPAIRNOTEDOCNUM + '''),'''') [Select], 
-			 ItemName,FrgnName [ForeignName] FROM OITM WHERE ' + @QRY + ' = ''Y''
+			 ItemCode,ItemName,FrgnName [ForeignName] FROM OITM WHERE ' + @QRY + ' = ''Y''
 			 '
 
 
@@ -49,7 +49,7 @@ SET @QUERY = @QUERY + ' UNION ALL ' + 'SELECT DISTINCT ISNULL((SELECT ''Y'' FROM
 															   WHERE ISNULL(B.U_ITEMDESC,'''') = ISNULL(ItemName,'''') 
 															   AND ISNULL(B.U_FRGNNAME,'''') = ISNULL(FrgnName,'''') 
 															   AND A.U_DOCNUM = ''' + @REPAIRNOTEDOCNUM + '''),'''') [Select], 
-			 ItemName,FrgnName [ForeignName] FROM OITM WHERE ' + @QRY + ' = ''Y''
+			 ItemCode,ItemName,FrgnName [ForeignName] FROM OITM WHERE ' + @QRY + ' = ''Y''
 			 '
 
 

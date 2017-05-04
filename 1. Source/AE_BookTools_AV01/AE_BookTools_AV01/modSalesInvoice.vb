@@ -92,6 +92,11 @@
         Dim sToolCatNo, sReprNtsDocNo As String
         oMatrix = objForm.Items.Item("38").Specific
 
+        oEdit = objForm.Items.Item("8").Specific
+        sDocNo = oEdit.Value
+        oCombo = objForm.Items.Item("88").Specific
+        sSeries = oCombo.Selected.Value
+
         oRecordSet = p_oDICompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
 
         For i As Integer = 1 To oMatrix.RowCount
@@ -99,19 +104,21 @@
                 sToolCatNo = oMatrix.Columns.Item("U_TOOLSCATEGORY").Cells.Item(i).Specific.value
 
                 If sToolCatNo <> "" Then
-                    sSql = "DELETE FROM [@AE_TCS1] WHERE DocEntry = (SELECT DocEntry FROM [@AE_TCSS] WHERE U_DOCNUM = '" & sToolCatNo & "')"
+                    sSql = "DELETE FROM [@AE_TCS1] WHERE DocEntry = (SELECT DocEntry FROM [@AE_TCSS] WHERE U_DOCNUM = '" & sToolCatNo & "' "
+                    sSql = sSql & " AND U_BASEDOCNO = '" & sDocNo & "' AND U_BASEDOCSERIES = '" & sSeries & "')"
                     oRecordSet.DoQuery(sSql)
 
-                    sSql = "DELETE FROM [@AE_TCSS] WHERE U_DOCNUM = '" & sToolCatNo & "'"
+                    sSql = "DELETE FROM [@AE_TCSS] WHERE U_DOCNUM = '" & sToolCatNo & "' AND U_BASEDOCNO = '" & sDocNo & "' AND U_BASEDOCSERIES = '" & sSeries & "'"
                     oRecordSet.DoQuery(sSql)
                 End If
 
                 sReprNtsDocNo = oMatrix.Columns.Item("U_REPAIRNOTES").Cells.Item(i).Specific.value
                 If sReprNtsDocNo <> "" Then
-                    sSql = "DELETE FROM [@AE_EPR1] WHERE DocEntry = (SELECT DocEntry FROM [@AE_REPR] WHERE U_DOCNUM = '" & sReprNtsDocNo & "')"
+                    sSql = "DELETE FROM [@AE_EPR1] WHERE DocEntry = (SELECT DocEntry FROM [@AE_REPR] WHERE U_DOCNUM = '" & sReprNtsDocNo & "' "
+                    sSql = sSql & " AND U_BASEDOCNO = '" & sDocNo & "' AND U_BASEDOCSERIES = '" & sSeries & "')"
                     oRecordSet.DoQuery(sSql)
 
-                    sSql = "DELETE FROM [@AE_REPR] WHERE U_DOCNUM = '" & sReprNtsDocNo & "'"
+                    sSql = "DELETE FROM [@AE_REPR] WHERE U_DOCNUM = '" & sReprNtsDocNo & "' AND U_BASEDOCNO = '" & sDocNo & "' AND U_BASEDOCSERIES = '" & sSeries & "'"
                     oRecordSet.DoQuery(sSql)
                 End If
 

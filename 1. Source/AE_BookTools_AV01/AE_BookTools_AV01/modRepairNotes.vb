@@ -324,6 +324,7 @@
                     sItemString = sItemString & "," & oGrid.DataTable.GetValue("ItemName", i)
                 End If
                 oMatrix.Columns.Item("V_-1").Cells.Item(iLine).Specific.value = iLine
+                oMatrix.Columns.Item("V_2").Cells.Item(iLine).Specific.value = oGrid.DataTable.GetValue("ItemCode", i)
                 oMatrix.Columns.Item("V_1").Cells.Item(iLine).Specific.value = oGrid.DataTable.GetValue("ItemName", i)
                 oMatrix.Columns.Item("V_0").Cells.Item(iLine).Specific.value = oGrid.DataTable.GetValue("ForeignName", i)
                 iLine = iLine + 1

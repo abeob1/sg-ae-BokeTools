@@ -1,0 +1,98 @@
+[08/16/2016 08:09:46][                                  Main()] Starting Addon startup function
+[08/16/2016 08:09:46][                                  Main()] Initializing public SBO Application object
+[08/16/2016 08:09:46][                                  Main()] Retriving SBO application company handle
+[08/16/2016 08:09:47][                                  Main()] Retrived SBO application company handle
+[08/16/2016 08:09:47][                                  Main()] Calling ConnectDICompSSO()
+[08/16/2016 08:09:47][                      ConnectDICompSSO()] Starting function
+[08/16/2016 08:10:12][                      ConnectDICompSSO()] Completed with SUCCESS
+[08/16/2016 08:10:12][                                  Main()] Creating Event handler class
+[08/16/2016 08:10:12][                      Class_Initialize()] Starting function
+[08/16/2016 08:10:12][                      Class_Initialize()] Retriving SBO Application handle
+[08/16/2016 08:10:12][                      Class_Initialize()] Completed with SUCCESS
+[08/16/2016 08:10:12][                                  Main()] Calling SetApplication Function
+[08/16/2016 08:10:13][                                  Main()] Addon started successfully
+[08/16/2016 08:18:29][                                  Main()] Starting Addon startup function
+[08/16/2016 08:18:29][                                  Main()] Initializing public SBO Application object
+[08/16/2016 08:18:29][                                  Main()] Retriving SBO application company handle
+[08/16/2016 08:18:30][                                  Main()] Retrived SBO application company handle
+[08/16/2016 08:18:30][                                  Main()] Calling ConnectDICompSSO()
+[08/16/2016 08:18:30][                      ConnectDICompSSO()] Starting function
+[08/16/2016 08:18:37][                      ConnectDICompSSO()] Completed with SUCCESS
+[08/16/2016 08:18:37][                                  Main()] Creating Event handler class
+[08/16/2016 08:18:37][                      Class_Initialize()] Starting function
+[08/16/2016 08:18:37][                      Class_Initialize()] Retriving SBO Application handle
+[08/16/2016 08:18:37][                      Class_Initialize()] Completed with SUCCESS
+[08/16/2016 08:18:37][                                  Main()] Calling SetApplication Function
+[08/16/2016 08:18:37][                                  Main()] Addon started successfully
+[08/16/2016 08:33:05][             SBO_Application_MenuEvent()] Starting function
+[08/16/2016 08:33:05][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[08/16/2016 08:33:10][             SBO_Application_MenuEvent()] Starting function
+[08/16/2016 08:33:10][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[08/16/2016 08:33:38][               RepairNotes_SBO_ItemEvent] Completed with ERROR
+[08/16/2016 08:33:38][             SBO_Application_ItemEvent()] Completed with ERROR
+[08/16/2016 08:36:14][                                  Main()] Starting Addon startup function
+[08/16/2016 08:36:14][                                  Main()] Initializing public SBO Application object
+[08/16/2016 08:36:14][                                  Main()] Retriving SBO application company handle
+[08/16/2016 08:36:17][                                  Main()] Retrived SBO application company handle
+[08/16/2016 08:36:17][                                  Main()] Calling ConnectDICompSSO()
+[08/16/2016 08:36:17][                      ConnectDICompSSO()] Starting function
+[08/16/2016 08:36:30][                      ConnectDICompSSO()] Completed with SUCCESS
+[08/16/2016 08:36:30][                                  Main()] Creating Event handler class
+[08/16/2016 08:36:30][                      Class_Initialize()] Starting function
+[08/16/2016 08:36:30][                      Class_Initialize()] Retriving SBO Application handle
+[08/16/2016 08:36:30][                      Class_Initialize()] Completed with SUCCESS
+[08/16/2016 08:36:30][                                  Main()] Calling SetApplication Function
+[08/16/2016 08:36:30][                                  Main()] Addon started successfully
+[08/16/2016 08:36:56][             SBO_Application_MenuEvent()] Starting function
+[08/16/2016 08:36:56][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[08/16/2016 08:36:56][             SBO_Application_MenuEvent()] Starting function
+[08/16/2016 08:36:56][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[08/16/2016 08:38:03][             SBO_Application_MenuEvent()] Starting function
+[08/16/2016 08:38:03][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[08/16/2016 08:38:03][             SBO_Application_MenuEvent()] Starting function
+[08/16/2016 08:38:03][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[08/16/2016 08:38:04][             SBO_Application_MenuEvent()] Starting function
+[08/16/2016 08:38:04][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[08/16/2016 08:38:04][             SBO_Application_MenuEvent()] Starting function
+[08/16/2016 08:38:04][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 08:56:12][                                  Main()] Starting Addon startup function
+[04/26/2017 08:56:12][                                  Main()] Initializing public SBO Application object
+[04/26/2017 08:56:12][                                  Main()] Retriving SBO application company handle
+[04/26/2017 08:56:17][                                  Main()] Retrived SBO application company handle
+[04/26/2017 08:56:17][                                  Main()] Calling ConnectDICompSSO()
+[04/26/2017 08:56:17][                      ConnectDICompSSO()] Starting function
+[04/26/2017 08:57:41][                      ConnectDICompSSO()] Completed with SUCCESS
+[04/26/2017 08:57:41][                                  Main()] Creating Event handler class
+[04/26/2017 08:57:41][                      Class_Initialize()] Starting function
+[04/26/2017 08:57:41][                      Class_Initialize()] Retriving SBO Application handle
+[04/26/2017 08:57:42][                      Class_Initialize()] Completed with SUCCESS
+[04/26/2017 08:57:42][                                  Main()] Calling SetApplication Function
+[04/26/2017 08:57:42][                                  Main()] Addon started successfully
+[04/26/2017 09:11:49][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:11:49][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:11:56][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:11:56][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:13:38][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:13:38][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:13:40][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:13:40][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:14:40][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:14:40][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:14:43][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:14:43][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:15:05][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:15:05][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:15:05][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:15:05][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:15:21][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:15:21][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:15:21][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:15:21][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:15:42][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:15:42][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:15:44][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:15:44][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:15:50][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:15:50][             SBO_Application_MenuEvent()] Completed with SUCCESS
+[04/26/2017 09:15:50][             SBO_Application_MenuEvent()] Starting function
+[04/26/2017 09:15:50][             SBO_Application_MenuEvent()] Completed with SUCCESS
